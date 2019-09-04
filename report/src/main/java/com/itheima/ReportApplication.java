@@ -1,0 +1,20 @@
+package com.itheima;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * @program: pyg
+ * @author: Mr.Jiang
+ * @create: 2019-09-03 18:57
+ * @description:启动springBoot的入口
+ **/
+@SpringBootApplication
+public class ReportApplication {
+
+    public static void main(String[] args) {
+
+        SpringApplication.run(ReportApplication.class, args);
+
+    }
+}
