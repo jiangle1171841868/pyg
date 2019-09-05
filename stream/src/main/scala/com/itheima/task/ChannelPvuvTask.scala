@@ -13,11 +13,11 @@ object ChannelPvuvTask extends ProcessData {
 
   override def process(waterData: DataStream[Message]): Unit = {
 
-    //1.数据转换 获取需要的数据
+    //1.数据转换 获取需要的数据 一条数据转换为多条数据 所以用flatmap
     waterData.flatMap(new ChannelPvuvFlatMap)
 
-      //2.分组
-      .keyBy(line => line.channelId)
+      //2.分组 对两个字段进行分组
+      .keyBy(line => line.channelId+line.timeFormat)
 
       //3.划分窗口
       .timeWindow(Time.seconds(3))

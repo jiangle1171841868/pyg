@@ -113,7 +113,7 @@ public class UserBrowseRecord {
             String jonstr = JSONObject.toJSONString(userBrowse);
             System.out.println(jonstr);
             try {
-                Thread.sleep(100);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

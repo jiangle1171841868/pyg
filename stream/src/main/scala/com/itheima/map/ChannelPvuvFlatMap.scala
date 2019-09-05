@@ -5,6 +5,7 @@ import com.itheima.util.TimeUtil
 import org.apache.flink.api.common.functions.RichFlatMapFunction
 import org.apache.flink.util.Collector
 
+//输入一条 输出0或者多条(基于时 日 月的pv uv的三条数据) 用flatmap
 class ChannelPvuvFlatMap extends RichFlatMapFunction[Message, ChannelPvuv] {
 
   //定义格式化模板
