@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 //@Controller
 //方法的返回值是json需要加ResponseBody注解  在类上使用注解RestController 就不用再每个方法上都加上ResponseBody
-@RestController
+@Controller
 @RequestMapping("report")
-public class Test {
+public class TestController {
 
     @RequestMapping("test")
-
     //RequestBody放在参数列表里面  表示接受json数据
-    public void receiveData(@RequestBody String data) {
+    public void receiveData(String data) {
         System.out.println("data：" + data);
     }
 }

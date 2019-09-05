@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @program: pyg
  * @author: Mr.Jiang
  * @create: 2019-09-03 18:57
- * @description:启动springBoot的入口
+ * @description: 启动springBoot的入口 放在所有包的最外面
  **/
 @SpringBootApplication
 public class ReportApplication {
