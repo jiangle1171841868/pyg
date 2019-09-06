@@ -5,7 +5,7 @@ import java.util.Properties
 import com.alibaba.fastjson.{JSON, JSONObject}
 import com.itheima.bean.{Message, UserBrowse}
 import com.itheima.config.GlobalConfig
-import com.itheima.task.ChannelHotTask
+import com.itheima.task.{ChannelFreshnessTask, ChannelHotTask, ChannelPvuvTask}
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.runtime.state.filesystem.FsStateBackend
 import org.apache.flink.streaming.api.environment.CheckpointConfig
@@ -102,7 +102,11 @@ object AppStream {
       * 6.实时频道的浏览器类型分析
       */
     //1.实时频道的热点统计
-    ChannelHotTask.process(waterData)
+    //ChannelHotTask.process(waterData)
+    //2.实时频道的pvuv分析
+    //ChannelPvuvTask.process(waterData)
+    //3.实时频道的用户新鲜度
+    ChannelFreshnessTask.process(waterData)
 
 
     /// TODO: 8.触发任务

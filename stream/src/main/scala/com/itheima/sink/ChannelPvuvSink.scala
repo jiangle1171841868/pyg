@@ -35,21 +35,21 @@ class ChannelPvuvSink extends RichSinkFunction[ChannelPvuv] {
     //非空检验 进行累加
     if (StringUtils.isNotBlank(pvState)) {
 
-      pv += pvState
+      pv += pvState.toLong
     }
 
     if (StringUtils.isNotBlank(uvState)) {
 
-      uv += uvState
+      uv += uvState.toLong
     }
 
     //封装多列数据，掺入到hbase
-    var map= Map[String,Any]()
-    map+=(pvCol->pv)
-    map+=(uvCol->uv)
-    map+=("channelId"->value.getChannelId)
-    map+=("time"->value.getTimeFormat)
-    HbaseUtil.putMapDataByRowkey(tableName,family,map,rowkey)
+    var map = Map[String, Any]()
+    map += (pvCol -> pv)
+    map += (uvCol -> uv)
+    map += ("channelId" -> value.getChannelId)
+    map += ("time" -> value.getTimeFormat)
+    HbaseUtil.putMapDataByRowkey(tableName, family, map, rowkey)
   }
 
 }

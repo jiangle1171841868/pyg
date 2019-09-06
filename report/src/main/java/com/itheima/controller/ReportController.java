@@ -31,11 +31,12 @@ public class ReportController {
 
     //todo 1.注入kafkaTemplate
     @Autowired
-    private KafkaTemplate kafkaTemplate;
+    KafkaTemplate kafkaTemplate;
 
     //todo 2.接收接送数据发送到kafka
     @RequestMapping(value = "put",method = RequestMethod.POST)
     public void putData(@RequestBody String json, HttpServletResponse rsp) throws IOException  {
+
 
         //a.封装数据到message
         Message message = new Message();
@@ -43,9 +44,9 @@ public class ReportController {
 
         //b.将数据转化为json字符串 发送到 kafka进行传输
         String messageJson = JSON.toJSONString(message);
-
+        //System.out.println("messageJson = " + messageJson);
         //c.发送
-        kafkaTemplate.send("pyg", "test", messageJson);
+        kafkaTemplate.send("pyg", messageJson);
 
         //d.发送响应状态给前端用户/或者是访问接口
         PrintWriter printWriter = write(rsp);

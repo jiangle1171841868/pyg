@@ -1,10 +1,10 @@
 package com.itheima.reduce
 
 import com.itheima.bean.ChannelPvuv
-import org.apache.flink.api.common.functions.RichReduceFunction
+import org.apache.flink.api.common.functions.{ReduceFunction}
 
 //reduce 聚合 输入和输出类型一样
-class ChannelPvuvReduce extends RichReduceFunction[ChannelPvuv] {
+class ChannelPvuvReduce extends ReduceFunction[ChannelPvuv] {
 
   override def reduce(value1: ChannelPvuv, value2: ChannelPvuv): ChannelPvuv = {
 

@@ -41,8 +41,8 @@ class ChannelPvuvFlatMap extends RichFlatMapFunction[Message, ChannelPvuv] {
     //true说明在小时  天 月 是首次访问  uv可以累加 uv设置为1
     //false设置为0
     isNew match {
-      case true => pvuv.setPv(1L)
-      case false => pvuv.setPv(0L)
+      case true => pvuv.setUv(1L)
+      case false => pvuv.setUv(0L)
     }
 
     //小时维度

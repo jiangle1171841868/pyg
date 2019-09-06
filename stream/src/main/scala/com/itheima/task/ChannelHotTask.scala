@@ -4,7 +4,7 @@ import com.itheima.`trait`.ProcessData
 import com.itheima.bean.{ChannelHot, Message}
 import org.apache.flink.streaming.api.scala.DataStream
 import org.apache.flink.streaming.api.windowing.time.Time
-
+import org.apache.flink.streaming.api.scala._
 object ChannelHotTask extends ProcessData {
 
   override def process(waterData: DataStream[Message]): Unit = {
