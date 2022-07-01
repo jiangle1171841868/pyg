@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <zookeeper.version>3.4.5</zookeeper.version>
         <scala.version>2.11.12</scala.version>
-        <hadoop.version>2.6.0</hadoop.version>
+        <hadoop.version>2.7.0</hadoop.version>
         <flink.version>1.5.0</flink.version>
     </properties>
 
